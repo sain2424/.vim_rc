@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+set nocompatible              " be iMproved, required;
 
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -13,13 +13,14 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'msanders/snipmate.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'jwalton512/vim-blade'
-Plugin 'mkitt/tabline.vim'
 Plugin 'takac/vim-hardtime'
 Plugin 'christoomey/vim-system-copy'
 Plugin 'itchyny/lightline.vim'
 Plugin 'prettier/vim-prettier'
 Plugin 'w0rp/ale'
 Plugin 'stephpy/vim-php-cs-fixer'
+
+Plugin 'maximbaz/lightline-ale'
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.

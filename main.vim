@@ -67,115 +67,17 @@ let g:php_cs_fixer_level = "psr2"
 highlight clear SignColumn
 set tags=~/.ctags
 
-
-"-------------Mappings--------------"
-
-"Make it easy to edit the Vimrc file.
-nmap <Leader>e :e 
-vmap <Leader>re "tdGofunction name() {<cr>}<esc>k"tp<esc>kw
-nmap <Leader>ev :tabedit $MYVIMRC<cr>
-nmap <Leader>eb :tabedit ~/.bash_profile<cr>
-nmap <Leader>ep :tabedit ~/.vim/plugins.vim<cr>
-nmap <Leader>es :tabedit ~/.vim/snippets/php.snippets<cr>
-nmap <Leader><Leader>t :tabedit ~/todo<cr>
-nmap <Leader>wt :tabedit ~/woxtasks<cr>
-nmap <Leader>f1 :Prettier<cr>
-
-nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
-nnoremap <silent><leader>f2 :call PhpCsFixerFixFile()<CR>
-
-nmap <Leader>a 0w
-
-"nmap <Leader>c ciw
-
-
 "Add simple highlight removal.
-nmap <Leader><space> :nohlsearch<cr>
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_quit_key='<Esc>'
-
-nmap <Leader>s :w<cr>
-nmap <Leader>b :buffers<cr>
-nmap <Leader><Leader>d :bd<cr>
-imap <C-a> <Esc>A
-nmap <Leader>1 :tabn 1<cr>
-nmap <Leader>2 :tabn 2<cr>
-nmap <Leader>3 :tabn 3<cr>
-nmap <Leader>4 :tabn 4<cr>
-nmap <Leader>5 :tabn 5<cr>
-nmap <Leader>6 :tabn 6<cr>
-nmap <Leader>7 :tabn 7<cr>
-nmap <Leader>8 :tabn 8<cr>
-nmap <Leader>9 :tabn 9<cr>
-nmap <Leader>0 :tablast<cr>
-nmap <Leader>w :bd<cr>
-nmap <Leader>= :tabnew<cr>
-
-nmap <Leader>qq :q<cr>
-" set line break above in normal mode
-nmap <Leader>x O<Esc>
-" set line break below in normal mode
-nmap <Leader>z o<Esc>
-
-"----Laravel Specific----"
-nmap <Leader><Leader>l :tabedit storage/logs/laravel.log<cr>
-nmap <Leader><Leader>e :tabedit .env<cr>
-
-nmap <Leader>l1 :tabedit routes/web.php<cr>
-nmap <Leader>l2 :tabedit routes/api.php<cr>
-nmap <Leader>l3 :tabedit app/Http/Controllers/Company/ApiController.php<cr>
-nmap <Leader>l4 :tabedit assets/js/widget.js<cr>
-nmap <Leader>l5 :tabedit assets/js/realtime.js<cr>
-
-
-nmap <Leader>n1 :tabedit node/index.js<cr>
-nmap <Leader>n2 :tabedit node/views/frame-secure.html<cr>
-
-nmap <Leader>m1 :tabedit node/api.js<cr>
-nmap <Leader>m2 :tabedit node/views/frame.html<cr>
-
-nmap <Leader>c1 :tabedit app/Http/Controllers/Company/SitesController.php<cr>:242<cr>
-
-
-"----- Laravel OTP project specific ----"
-nmap <Leader>o1 :tabedit app/Http/Controllers/OrdersController.php<cr>
-nmap <Leader>o2 :tabedit app/Http/Controllers/ApiController.php<cr>
-
-
-
-nmap <Leader>m :CtrlP <cr>company/mailbox/
-nmap <Leader>c :CtrlP <cr>customer/mailbox/
-nmap <Leader>x :CtrlP <cr>controllers/company/
-
-
-nmap <Leader>d1 :tabedit app/Http/Controllers/Company/SitesController.php<cr>
-
-nmap <Leader>j1 :tabedit assets/js/company.js<cr>
-nmap <Leader>j2 :tabedit assets/js/site-settings.js<cr>
-
-" Views
-nmap <Leader>v1 :tabedit resources/views/company/sites/settings.blade.php<cr>
-
-" Tests
-nmap <Leader>t1 :tabedit tests/Company/ProjectTest.php<cr>
-nmap <Leader>t2 :tabedit tests/Agent/ProjectTest.php<cr>
-
-" Refactoring
-nmap <Leader>r1 :tabedit app/Http/Controllers/Company/SitesController.php<cr>
-nmap <Leader>r2 :tabedit app/Http/Controllers/Company/AgentsController.php<cr>
 
 
 "-------------Split Management--------------"
 set splitbelow                              "Make splits default to below...
 set splitright                              "And to the right. This feels more natural.
 
-"We'll set simpler mappings to switch between splits.
-nmap <C-J> <C-W><C-J>
-nmap <C-K> <C-W><C-K>
-nmap <C-H> <C-W><C-H>
-nmap <C-L> <C-W><C-L>
 
 "-------------Search--------------"
 set hlsearch
@@ -187,11 +89,7 @@ set incsearch
 let NERDTreeHijackNetrw = 0
 "
 ""Make NERDTree easier to toggle.
-nmap <Leader>n :NERDTreeToggle<cr>
 
-map <Leader>t :!phpunit %<cr>
-map <Leader>f :set fu<cr>
-map <Leader>g :set nofu<cr>
 
 "-------------Plugins--------------"
 "/
@@ -205,8 +103,6 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
-nmap <C-p> :CtrlP<cr>
-"nmap <C-r> :CtrlPBufTag<cr>
 
 " Press Ctrl-Tab to switch between open tabs (like browser tabs) to 
 " the right side. Ctrl-Shift-Tab goes the other way.
@@ -236,8 +132,27 @@ let g:lightline = {
       \ }
 
 let NERDSpaceDelims=1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
 
 filetype on
 filetype plugin on
 filetype indent on
 
+let g:lightline.active = { 'right': [
+      \  [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
+      \  [ 'lineinfo' ],
+      \  [ 'percent' ],
+      \  [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ]
+      \  ]}
+let g:lightline.component_expand = {
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'success',
+      \ }
