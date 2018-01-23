@@ -54,7 +54,7 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 set autowrite  "Save on buffer switch
 set guifont=Fira\ Code:h12
-set mouse=a
+"set mouse=a
 " set macligatures                " Mac specific symbols for macvim
 set guioptions-=e 
 syntax enable

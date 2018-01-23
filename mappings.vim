@@ -1,12 +1,14 @@
 "-------------Mappings--------------"
 
 "Make it easy to edit the Vimrc file.
-command Q q
+"command Q q
 nmap <Leader>e :tabedit 
 nmap <Leader>ee :tabedit %:h
 nmap <Leader>sc :so ~/.vimrc<cr>
 nmap <Leader>lc :tabedit app/Http/Controllers/
-vmap <Leader>re "tdGofunction name() {<cr>}<esc>k"tp<esc>kw
+vmap mre "tdGofunction name() {<cr>}<esc>k"tp<esc>kw
+nmap mw df>i['<esc>ea']<esc>
+nmap me d2li-><esc>eld2l
 "nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <Leader>ev :tabedit ~/.vim_rc/
 nmap <Leader>eb :tabedit ~/.bash_profile<cr>
@@ -90,9 +92,9 @@ nmap <Leader>v1 :tabedit resources/views/company/sites/settings.blade.php<cr>
 nmap <Leader>t1 :tabedit tests/Company/ProjectTest.php<cr>
 nmap <Leader>t2 :tabedit tests/Agent/ProjectTest.php<cr>
 
-" Refactoring
-nmap <Leader>r1 :tabedit app/Http/Controllers/Company/SitesController.php<cr>
-nmap <Leader>r2 :tabedit app/Http/Controllers/Company/AgentsController.php<cr>
+" Routes
+nmap <Leader>r1 :tabedit routes/company.php<cr>
+nmap <Leader>r2 :tabedit routes/agent.php<cr>
 
 
 nmap <Leader><space> :nohlsearch<cr>
