@@ -1,7 +1,7 @@
 "-------------Mappings--------------"
 
 "Make it easy to edit the Vimrc file.
-"command Q q
+command Q q
 nmap <Leader>e :tabedit 
 nmap <Leader>ee :tabedit %:h
 nmap <Leader>sc :so ~/.vimrc<cr>
