@@ -1,7 +1,7 @@
 "-------------Mappings--------------"
 
 "Make it easy to edit the Vimrc file.
-command Q q
+" command Q q
 nmap <Leader>e :tabedit 
 nmap <Leader>ee :tabedit %:h
 nmap <Leader>sc :so ~/.vimrc<cr>
@@ -93,6 +93,7 @@ nmap <Leader>t1 :tabedit tests/Company/ProjectTest.php<cr>
 nmap <Leader>t2 :tabedit tests/Agent/ProjectTest.php<cr>
 
 " Routes
+nmap <Leader>rr :tabedit routes/
 nmap <Leader>r1 :tabedit routes/company.php<cr>
 nmap <Leader>r2 :tabedit routes/agent.php<cr>
 

@@ -1,7 +1,7 @@
 let mapleader = ","
 let g:mapleader = ","
 set autoindent
-set cindent
+ set cindent
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
@@ -31,6 +31,7 @@ let g:jellybeans_overrides = {
             \              'attr': 'bold' },
             \}
 let g:jellybeans_use_lowcolor_black = 0
+let g:prettier#config#trailing_comma = 'none'
 
 set showtabline=2
 
@@ -96,7 +97,7 @@ let NERDTreeHijackNetrw = 0
 "/ CtrlP
 "/
 " Ignore folders
-let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 " make open in new tab (ctrl + t) default behaviour
 let g:ctrlp_prompt_mappings = {
@@ -156,3 +157,13 @@ let g:lightline.component_type = {
       \     'linter_errors': 'error',
       \     'linter_ok': 'success',
       \ }
+
+
+" Prettier for PHP
+function PrettierPhpCursor()
+  let save_pos = getpos(".")
+  %! prettier --stdin --parser=php
+  call setpos('.', save_pos)
+endfunction
+" define custom command
+command PrettierPhp call PrettierPhpCursor()
