@@ -22,6 +22,7 @@ Plugin 'stephpy/vim-php-cs-fixer'
 
 Plugin 'maximbaz/lightline-ale'
 Plugin 'miyakogi/seiya.vim'
+Plugin 'joshdick/onedark.vim'
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.

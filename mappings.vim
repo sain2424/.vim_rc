@@ -9,6 +9,7 @@ nmap <Leader>lc :tabedit app/Http/Controllers/
 vmap mre "tdGofunction name() {<cr>}<esc>k"tp<esc>kw
 nmap mw df>i['<esc>ea']<esc>
 nmap me d2li-><esc>eld2l
+nmap zi f;i !important<esc>
 "nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <Leader>ev :tabedit ~/.vim_rc/
 nmap <Leader>eb :tabedit ~/.bash_profile<cr>
@@ -111,3 +112,4 @@ nmap <Leader>f :set fu<cr>
 nmap <Leader>g :set nofu<cr>
 nmap <C-p> :CtrlP<cr>
 nmap <C-t> :CtrlPBufTag<cr>
+nmap zn :NERDTreeToggle<cr>
