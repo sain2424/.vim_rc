@@ -24,10 +24,12 @@ Plugin 'maximbaz/lightline-ale'
 Plugin 'miyakogi/seiya.vim'
 Plugin 'joshdick/onedark.vim'
 
+Plugin 'c9s/phpunit.vim'
+
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+" filetype plugin indent on    " required
 
