@@ -1,26 +1,33 @@
 "-------------Mappings--------------"
 
 "Make it easy to edit the Vimrc file.
+" Both Q and q will be able to quit
 command Q q
+" Both Q and q will be able to quit
 nmap <Leader>e :tabedit 
-nmap <Leader>ee :tabedit %:h
+" Get relative path of folder
+nmap <Leader>ef :tabedit %:h
+" Source .vimrc
 nmap <Leader>sc :so ~/.vimrc<cr>
 " Refactor selected lines to new function
 vmap mre "tdGofunction name() {<cr>}<esc>k"tp<esc>kw
 " Convert php object value to string value
 nmap mw df>i['<esc>ea']<esc>  
 nmap me d2li-><esc>eld2l
-nmap zi f;i !important<esc>
-"nmap <Leader>ev :tabedit $MYVIMRC<cr>
+
+" Edit .vimrc
+nmap mev :tabedit $MYVIMRC<cr>
 nmap <Leader>ev :tabedit ~/.vim_rc/
 nmap <Leader>es :tabedit ~/.vim/snippets/php.snippets<cr>
-nmap <Leader><Leader>t :tabedit ~/todo<cr>
-nmap <Leader>f1 :Prettier<cr>
+" Open todo file from root directory
+nmap mt :tabedit ~/todo<cr>
 
+" find function
 nmap <Leader>ff /function 
 
-nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
-nnoremap <silent><leader>f2 :call PhpCsFixerFixFile()<CR>
+"-------------CSS--------------"
+" Adds important
+nmap zi f;i !important<esc>
 
 nmap <Leader>a 0w
 
