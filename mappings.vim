@@ -6,8 +6,10 @@ nmap <Leader>e :tabedit
 nmap <Leader>ee :tabedit %:h
 nmap <Leader>sc :so ~/.vimrc<cr>
 nmap <Leader>lc :tabedit app/Http/Controllers/
+" Refactor selected lines to new function
 vmap mre "tdGofunction name() {<cr>}<esc>k"tp<esc>kw
-nmap mw df>i['<esc>ea']<esc>
+" Convert php object value to string value
+nmap mw df>i['<esc>ea']<esc>  
 nmap me d2li-><esc>eld2l
 "nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <Leader>ev :tabedit ~/.vim_rc/
