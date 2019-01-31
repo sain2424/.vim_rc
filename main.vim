@@ -53,10 +53,7 @@ set smartcase                   " ignore case if search pattern is all lowercase
 set timeout timeoutlen=200 ttimeoutlen=100
 set visualbell           " don't beep
 set noerrorbells         " don't beep
-set autowrite  "Save on buffer switch
 set guifont=Fira\ Code:h12
-"set mouse=a
-" set macligatures                " Mac specific symbols for macvim
 set guioptions-=e 
 syntax enable
 let g:ale_sign_column_always = 1
@@ -105,26 +102,6 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
 
-" Press Ctrl-Tab to switch between open tabs (like browser tabs) to 
-" the right side. Ctrl-Shift-Tab goes the other way.
-noremap <C-Tab> :tabnext<CR>
-noremap <C-S-Tab> :tabprev<CR>
-" Switch to specific tab numbers with Command-number
-noremap <D-1> :tabn 1<CR>
-noremap <D-2> :tabn 2<CR>
-noremap <D-3> :tabn 3<CR>
-noremap <D-4> :tabn 4<CR>
-noremap <D-5> :tabn 5<CR>
-noremap <D-6> :tabn 6<CR>
-noremap <D-7> :tabn 7<CR>
-" Command-0 goes to the last tab
-noremap <D-0> :tablast<CR>
-
-noremap! <C-h> <Left>
-noremap! <C-j> <Down>
-noremap! <C-k> <Up>
-noremap! <C-l> <Right>
-
 set nosmd   " short for 'showmode'
 "set noru    " short for 'ruler'
 
@@ -139,6 +116,8 @@ let g:ale_lint_on_enter = 0
 filetype on
 filetype plugin on
 filetype indent on
+
+" autocmd FileType php setlocal ts=4 sts=4 sw=4
 
 let g:lightline.active = { 'right': [
       \  [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
@@ -158,12 +137,3 @@ let g:lightline.component_type = {
       \     'linter_ok': 'success',
       \ }
 
-
-" Prettier for PHP
-function PrettierPhpCursor()
-  let save_pos = getpos(".")
-  %! prettier --stdin --parser=php
-  call setpos('.', save_pos)
-endfunction
-" define custom command
-command PrettierPhp call PrettierPhpCursor()
