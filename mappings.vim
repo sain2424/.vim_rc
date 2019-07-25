@@ -2,7 +2,7 @@
 
 "Make it easy to edit the Vimrc file.
 " Both Q and q will be able to quit
-command Q q
+command! Q q
 " Both Q and q will be able to quit
 nmap <Leader>e :tabedit 
 " Get relative path of folder
@@ -24,6 +24,9 @@ nmap mt :tabedit ~/todo<cr>
 
 " find function
 nmap <Leader>ff /function 
+
+nmap zj :CtrlP<cr>.ts<Left><Left><Left>
+nmap zh :CtrlP<cr>.html<Left><Left><Left><Left><Left><Left>
 
 "-------------CSS--------------"
 " Adds important
@@ -50,12 +53,6 @@ nmap <Leader>= :tabnew<cr>
 
 nmap <Leader>qq :q<cr>
 
-"----Laravel Specific----"
-nmap <Leader><Leader>l :tabedit storage/logs/laravel.log<cr>
-nmap <Leader><Leader>e :tabedit .env<cr>
-
-nmap <Leader><space> :nohlsearch<cr>
-
 
 "We'll set simpler mappings to switch between splits.
 nmap <C-J> <C-W><C-J>
@@ -69,3 +66,13 @@ nmap <Leader>g :set nofu<cr>
 nmap <C-p> :CtrlP<cr>
 nmap <C-t> :CtrlPBufTag<cr>
 nmap zn :NERDTreeToggle<cr>
+
+nmap <Leader><space> :nohlsearch<cr>
+
+"----Laravel Specific----"
+nmap <Leader><Leader>l :tabedit storage/logs/laravel.log<cr>
+nmap <Leader><Leader>e :tabedit .env<cr>
+
+nmap <Leader>l1 :tabedit routes/api.php<cr>
+map <Leader>c :.w !pbcopy<CR><CR>
+map <Leader>v :r !pbpaste<CR>

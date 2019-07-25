@@ -25,6 +25,9 @@ Plugin 'miyakogi/seiya.vim'
 Plugin 'joshdick/onedark.vim'
 
 Plugin 'c9s/phpunit.vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'burnettk/vim-angular'
+
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.

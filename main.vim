@@ -117,7 +117,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" autocmd FileType php setlocal ts=4 sts=4 sw=4
+autocmd FileType php setlocal ts=4 sts=4 sw=4
 
 let g:lightline.active = { 'right': [
       \  [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
