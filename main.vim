@@ -7,7 +7,6 @@ set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 
-
 set showtabline=2               " setting tabline display 'always'
 set showmode                    " always show what mode we're currently editing in
 set nowrap                      " don't wrap lines
@@ -35,6 +34,11 @@ highlight clear SignColumn
 set nosmd   " short for 'showmode'
 "set noru    " short for 'ruler'
 
+" Enable filetype
+filetype on
+filetype plugin on
+filetype indent on
+
 
 "-------------Theme--------------"
 colorscheme jellybeans
@@ -59,88 +63,10 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
 
-"-------------JS--------------"
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
-
-"-------------PHP--------------"
-let g:php_cs_fixer_level = "psr2"
-
-
 "-------------Split Management--------------"
 set splitbelow                              "Make splits default to below...
 set splitright                              "And to the right. This feels more natural.
 
-
 "-------------Search--------------"
 set hlsearch
 set incsearch
-
-"/
-""/ NERDTree
-"/
-let NERDTreeHijackNetrw = 0
-"
-""Make NERDTree easier to toggle.
-
-
-"-------------Plugins--------------"
-"/
-"/ CtrlP
-"/
-"
-" Ignore folders
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
-" make open in new tab (ctrl + t) default behaviour
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
-
-
-
-let NERDSpaceDelims=1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-
-filetype on
-filetype plugin on
-filetype indent on
-
-autocmd FileType php setlocal ts=4 sts=4 sw=4
-
-let g:lightline = {}
-let g:lightline.colorscheme = 'jellybeans'
-
-let g:lightline.active = { 'right': [
-      \  [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
-      \  [ 'lineinfo' ],
-      \  [ 'percent' ],
-      \  [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ]
-      \  ]}
-
-let g:lightline.active.left = [
-      \ [ 'mode', 'paste' ],
-      \ [ 'gitbranch', 'readonly', 'filename', 'modified' ] 
-      \ ]
-
-" plugin for showing branch
-let g:lightline.component_function = {
-      \   'gitbranch': 'gitbranch#name'
-      \ }
-
-
-let g:lightline.component_expand = {
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
-
-let g:lightline.component_type = {
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'success',
-      \ }
-
